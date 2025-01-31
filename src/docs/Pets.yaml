@@ -1,0 +1,221 @@
+paths:
+  /api/pets/:
+    get:
+      summary: Obtiene todos las mascotas
+      tags:
+        - Pets
+      responses:
+        "200":
+          description: Las mascotas fueron obtenidas OK desde la DB
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: Listado de Mascotas.
+                  mascota:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Pets'
+    post:
+      summary: Graba una Mascota
+      tags:
+        - Mascota
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                birthDate:
+                  type: string
+                  format: date
+                  example: "2020-05-01"
+                specie:
+                  type: string
+                  example: "DOG"
+                name:
+                  type: string
+                  example: "firulai"
+      responses:
+        "201":
+          description: Mascota creada con éxito
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: Nueva Mascota.
+                  mascota:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Pets'
+        "400":
+          description: Incomplete values
+  /api/pets/{id}:        
+    put:
+      summary: Actualiza una Mascota
+      tags:
+        - Mascota
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: ID único de la mascota a actualizar
+          schema:
+            type: string
+            example: "6792a06c06b31828358b4bad"
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                birthDate:
+                  type: string
+                  format: date
+                  example: "2020-05-01"
+                specie:
+                  type: string
+                  example: "DOG"
+                name:
+                  type: string
+                  example: "firulai"
+      responses:
+        "200":
+          description: Mascota actualizada con éxito
+        "400":
+          description: ID de mascota no encontrado
+  /api/delete/{id}:        
+    delete:
+      summary: elimina una Mascota
+      tags:
+        - Mascota
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: ID único de la mascota a eliminar
+          schema:
+            type: string
+            example: "6792a06c06b31828358b4bad"
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                birthDate:
+                  type: string
+                  format: date
+                  example: "2020-05-01"
+                specie:
+                  type: string
+                  example: "DOG"
+                name:
+                  type: string
+                  example: "firulai"
+      responses:
+        "200":
+          description: Mascota eliminada con éxito
+        "400":
+          description: ID de mascota no encontrado
+  /api/withimage: 
+    post:
+      summary: Graba una Mascota
+      tags:
+        - Mascota
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                birthDate:
+                  type: string
+                  format: date
+                  example: "2020-05-01"
+                specie:
+                  type: string
+                  example: "DOG"
+                name:
+                  type: string
+                  example: "firulai"
+                image:
+                  type: string
+                  example: "/document/imge.png"
+      responses:
+        "201":
+          description: Mascota creada con éxito
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: Nueva Mascota.
+                  mascota:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/PetsWithImage'
+        "400":
+          description: Incomplete values    
+
+components:
+  schemas:
+    Pets:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Nombre de la mascota
+        specie:
+          type: string
+          description: Especie de la mascota
+        adopted:
+          type: boolean
+          description: Estado de adopción
+        birthDate:
+          type: string
+          format: date
+          description: Fecha de nacimiento
+      example:
+        name: "Firulai"
+        specie: "DOG"
+        adopted: true
+        birthDate: "2020-05-01"
+     
+    PetsWithImage:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Nombre de la mascota
+        specie:
+          type: string
+          description: Especie de la mascota
+        adopted:
+          type: boolean
+          description: Estado de adopción
+        birthDate:
+          type: string
+          format: date
+          description: Fecha de nacimiento
+        image:
+          type: string
+          description: imagen de la mascota        
+      example:
+        name: "Firulai"
+        specie: "DOG"
+        adopted: true
+        birthDate: "2020-05-01"
+

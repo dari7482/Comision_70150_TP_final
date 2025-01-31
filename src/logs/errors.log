@@ -1,0 +1,6 @@
+{"level":"error","message":"user Not found: Cast to ObjectId failed for value \"6796c88f593882759cb5811\" (type string) at path \"_id\" for model \"Users\"","timestamp":"2025-01-27T16:16:44.130Z"}
+{"level":"error","message":"Este es un error error","timestamp":"2025-01-27T19:49:44.908Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"7991bc4294067552722bf44\" (type string) at path \"_id\" for model \"Pets\"","timestamp":"2025-01-28T18:33:04.666Z"}
+{"level":"error","message":"result is not defined","timestamp":"2025-01-28T18:34:11.879Z"}
+{"level":"error","message":"result is not defined","timestamp":"2025-01-28T18:34:32.229Z"}
+{"level":"error","message":"result is not defined","timestamp":"2025-01-28T18:35:04.997Z"}
