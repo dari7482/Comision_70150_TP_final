@@ -32,21 +32,21 @@ Testing de rutas
 npm run dev
 npm run test
 
-#Rutas de autenticación:
-#POST /api/sessions/register → Registrar usuario
-#POST /api/sessions/login → Iniciar sesión
-#GET /api/sessions/current → Obtener información del usuario autenticado
-#POST /api/sessions/unprotectedLogin → Login sin protección
-#GET /api/sessions/unprotectedCurrent → Obtener usuario sin protección
-#POST /api/sessions/logout → Cerrar sesión
+## Rutas de autenticación:
+## POST /api/sessions/register → Registrar usuario
+## POST /api/sessions/login → Iniciar sesión
+## GET /api/sessions/current → Obtener información del usuario autenticado
+## POST /api/sessions/unprotectedLogin → Login sin protección
+## GET /api/sessions/unprotectedCurrent → Obtener usuario sin protección
+## POST /api/sessions/logout → Cerrar sesión
 
-#Documentación API
+## Documentación API
 
-#Endpoints de Mascotas:
-#GET /api/pets/ → Obtener todas las mascotas
-#POST /api/pets/ → Crear una nueva mascota
-#POST /api/pets/withimage → Crear una mascota con imagen
-#PUT /api/pets/:pid → Actualizar una mascota por ID
-#DELETE /api/pets/:pid → Eliminar una mascota por ID
+## Endpoints de Mascotas:
+## GET /api/pets/ → Obtener todas las mascotas
+## POST /api/pets/ → Crear una nueva mascota
+## POST /api/pets/withimage → Crear una mascota con imagen
+## PUT /api/pets/:pid → Actualizar una mascota por ID
+## DELETE /api/pets/:pid → Eliminar una mascota por ID
 
 
